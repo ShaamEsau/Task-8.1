@@ -38,3 +38,19 @@ body {
     display: inline;
     text-align: center;
 }
+
+/* Removes bullet points of unordered list */
+ul{
+    list-style: none;
+}
+
+/* Displays text in the same line instead of one on top the other */
+
+li{
+    display: inline-block;
+}
+
+/* Once clicked on makes the text color transparent */
+.active{
+    color: transparent;
+}

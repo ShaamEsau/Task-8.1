@@ -1,6 +1,6 @@
 /* Calls the React and Route Library to be used */
 import React from 'react';
-import {BrowserRouter, Route, Link, Switch} from "react-router-dom";
+import {BrowserRouter, Route, NavLink, Switch} from "react-router-dom";
 import './App.css';
 /* Calls custom component to be used */
 import Login from "./Components/Header.js";
@@ -24,12 +24,17 @@ class App extends React.Component {
 					{/* Creates an unordered list */}
 					<ul>
 						{/* Sets the link and path to the component to be displayed when link is clicked on */}
-						<Route path = {"/Product"} render = {() => <Link to ="/">Home</Link>} />
-						<Route exact = {true} path = {"/"} render = {() => <Link to = "/Product">Product</Link>}/>
+						<li>
+						<NavLink exact activeClassName = "active" to= "/">Home</NavLink>
+						</li>
+						<li>
+						<NavLink activeClassName = "active" to = "/Product"> Shop </NavLink>
+						</li>
 					</ul>
-
-						<Route exact = {true} path = {"/"} component = {Land} />
+					<Switch>
+						<Route exact path = {"/"} component = {Land} />
 						<Route path = {"/Product"} component = {Shop} />
+					</Switch>
 				</div>
 				</BrowserRouter>
 			</div>
